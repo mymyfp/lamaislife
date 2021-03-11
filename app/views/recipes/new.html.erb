@@ -1,0 +1,39 @@
+<div class="container form radius mt-3 mb-3">
+  <div class="row justify-content-center">
+    <div class="col-sm-9">
+    <%= simple_form_for(@recipe) do |f| %>
+    <h1>Ajoute ta recette</h1>
+    <div class="form-inputs">
+      <div class="input-box">
+        <h2>Donne-lui un nom</h2>
+          <%= f.input :name,
+                      required: true,
+                      autofocus: true,
+                      label: false,
+                      placeholder: "Choucroute alsacienne à la Coco"%>
+      </div>
+      <div class="input-box">
+        <h2>C'est quoi ?</h2>
+        <%= f.input :description,
+                    label: false,
+                    placeholder: "Bah... une choucroute",
+                    as: :text %>
+      </div>
+      <div class="input-box">
+        <h2>Add some photos *</h2>
+        <%= f.input :photos,
+                    required: true,
+                    as: :file,
+                    label: false,
+                    input_html: { multiple: true }
+                    %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "C'est bon !", class: "btn btn-primary rounded-btn btn-lg btn-block" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+
+</div>
