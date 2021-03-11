@@ -20,12 +20,11 @@
                     as: :text %>
       </div>
       <div class="input-box">
-        <h2>Add some photos *</h2>
-        <%= f.input :photos,
+        <h2>Add a photo *</h2>
+        <%= f.input :photo,
                     required: true,
                     as: :file,
-                    label: false,
-                    input_html: { multiple: true }
+                    label: false
                     %>
       </div>
     </div>
