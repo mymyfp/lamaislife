@@ -1,0 +1,9 @@
+<h1>Les recettes</h1>
+<%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary btn-lg" %>
+
+<% @recipes.each do |recipe| %>
+<div class="recipe-card">
+  <%= link_to recipe.name, recipe_path(recipe) %>
+  <% end %>
+</div>
+
