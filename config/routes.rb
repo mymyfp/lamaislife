@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :recipes do
     member {patch :vote }
   end
+  resources :rooms do
+    member {patch :join }
+  end
 end
