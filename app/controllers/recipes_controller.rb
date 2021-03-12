@@ -34,6 +34,17 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def vote
+    @recipe = Recipe.find(params[:id])
+    if @recipe.votes
+      @votes = @recipe.votes + 1
+    else
+      @votes = 1
+    end
+    @recipe.update(votes: @votes)
+    redirect_to recipe_path(@recipe)
+  end
+
   private
 
   def recipe_params
