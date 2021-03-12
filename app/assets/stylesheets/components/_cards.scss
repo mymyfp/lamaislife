@@ -1,0 +1,107 @@
+.recipe-card {
+  background: #fff;
+  border-radius: 15px;
+  display: inline-block;
+  height: 350px;
+  position: relative;
+  width: 250px;
+  box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.5);
+  margin: 10px;
+  overflow-wrap: break-word;
+
+
+  h1 {
+    padding: 10px;
+
+    color: $gray;
+    font-size: 22px;
+  }
+
+  p {
+    padding: 0 10px;
+    text-align: left;
+    line-height: 1.2;
+    font-size: 0.9rem;
+    color: $gray;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
+.recipe-card-image {
+  background-size: cover;
+  height:220px;
+  width:250px;
+  border-radius: 15px 15px 0px 0px;
+  transition: height 1s ease, opacity 0.3s ease, padding-top 0.3s ease;
+  position: relative;
+}
+
+.card-board {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // white-space: nowrap;
+
+  width: 90%;
+
+  // trouver une solution pour la souris
+  margin: 0 auto;
+    &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.recipe-card:hover {
+
+  .recipe-card-image {
+  height: 175px;
+  opacity: 0.9;
+  }
+
+  .button-invisible {
+  position: absolute;
+  bottom: 8px;
+  text-decoration: none;
+  color: $green;
+  background: $white;
+  border: 1px solid;
+  border-color: $green;
+  opacity: 1;
+  }
+}
+
+.button-invisible {
+  position: absolute;
+  bottom: 8px;
+  left: 58px;
+  padding: 8px 24px;
+  color: $white;
+  background: $white;
+  border-radius: 10px;
+  transition: background 0.5s ease, color 0.3s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+.card-text {
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a:active{
+  text-decoration: none;
+}
+
+.votes {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+}
