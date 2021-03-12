@@ -3,3 +3,4 @@
 <p><%= @recipe.description %></p>
 <p><%= @recipe.votes %></p>
 <%= link_to "Revenir aux recettes", recipes_path, class: "btn btn-primary btn-lg" %>
+<%= link_to "Voter pour cette recette", vote_recipe_path(@recipe), method: :patch, class: "btn btn-primary btn-lg" %>
