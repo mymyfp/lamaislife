@@ -71,18 +71,22 @@
   border-color: $green;
   opacity: 1;
   }
+  .btn-room {
+  left: 5%;
+  }
 }
 
 .button-invisible {
   position: absolute;
   bottom: 8px;
-  left: 58px;
+  left: 25%;
   padding: 8px 24px;
   color: $white;
   background: $white;
   border-radius: 10px;
   transition: background 0.5s ease, color 0.3s ease, opacity 1s ease;
   opacity: 0;
+
 }
 
 .card-text {

@@ -7,7 +7,11 @@
         <%= cl_image_tag @recipe.user.photo.key, crop: :fill, class: "avatar" %>
       </div>
       <div class="votes d-flex justify-content-around align-items-center p-3">
-        <p class="p-0 m-0"><%= @recipe.votes %> votes</p>
+        <% if @recipe.votes %>
+          <p class="p-0 m-0"><%= @recipe.votes %> votes</p>
+        <% else %>
+          <p class="p-0 m-0">0 votes</p>
+        <% end %>
         <%= link_to "Voter pour cette recette", vote_recipe_path(@recipe), method: :patch, class: "btn btn-primary rounded-btn" %>
       </div>
       <h3>Description</h3>
