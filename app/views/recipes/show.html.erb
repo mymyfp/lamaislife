@@ -1,6 +1,24 @@
-<h1><%= @recipe.name %></h1>
-<%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
-<p><%= @recipe.description %></p>
-<p><%= @recipe.votes %></p>
-<%= link_to "Revenir aux recettes", recipes_path, class: "btn btn-primary btn-lg" %>
-<%= link_to "Voter pour cette recette", vote_recipe_path(@recipe), method: :patch, class: "btn btn-primary btn-lg" %>
+<div class="container p-5">
+  <div class="row">
+    <div class="col-6 p-3">
+      <h1><%= @recipe.name %></h1>
+      <div class="owner-card d-flex align-items-center">
+        <p class="p-0 m-0">suggéré par <%= @recipe.user.username %></p>
+        <%= cl_image_tag @recipe.user.photo.key, crop: :fill, class: "avatar" %>
+      </div>
+      <div class="votes d-flex justify-content-around align-items-center p-3">
+        <p class="p-0 m-0"><%= @recipe.votes %> votes</p>
+        <%= link_to "Voter pour cette recette", vote_recipe_path(@recipe), method: :patch, class: "btn btn-primary rounded-btn" %>
+      </div>
+      <h3>Description</h3>
+      <p><%= @recipe.description %></p>
+      <h3>Ingrédients</h3>
+      <p>En construction</p>
+    </div>
+    <div class="col-6 p-3 align-self-center">
+    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    </div>
+
+    <%= link_to "Revenir aux recettes", recipes_path, class: "btn btn-primary" %>
+</div>

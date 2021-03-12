@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     @recipe.save
     redirect_to recipe_path(@recipe)
   end
@@ -42,7 +43,7 @@ class RecipesController < ApplicationController
       @votes = 1
     end
     @recipe.update(votes: @votes)
-    redirect_to recipe_path(@recipe)
+    redirect_to recipes_path
   end
 
   private
