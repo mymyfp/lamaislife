@@ -19,10 +19,10 @@
       <h3>Ingrédients</h3>
       <p>En construction</p>
     </div>
-    <div class="col-6 p-3 align-self-center">
-    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="col-6 p-3" align="center">
+    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fit %>
     </div>
     </div>
 
-    <%= link_to "Revenir aux recettes", recipes_path, class: "btn btn-primary" %>
+    <%= link_to "Revenir aux recettes", recipes_path, class: "btn btn-primary rounded-btn" %>
 </div>
