@@ -1,5 +1,5 @@
 <div class="container">
-<h2 class="pt-5 pl-5">Les Chambres </h2>
+<h2 class="pt-5 pl-5 mb-5">Les Chambres </h2>
   <div class="card-board pb-5">
     <% @rooms.each do |room| %>
       <% if current_user.room_id == room.id  %>
@@ -8,7 +8,7 @@
           <div class="card-text">
             <h1><%= link_to room.name, room_path(room) %></h1>
             <div class="card-info d-flex justify-content-around">
-              <p>C'est ta chambre</p>
+              <p><strong>C'est ta chambre</strong></p>
               <p> <%= room.users.count %>/<%= room.capacity %></p>
             </div>
           </div>
